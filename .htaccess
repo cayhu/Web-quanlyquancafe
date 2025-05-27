@@ -1,0 +1,15 @@
+# Replace index to all-tables.php
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !views/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) /views/$1 [L]
+
+
+# Replace all error pages
+ErrorDocument 401 /views/401.php
+ErrorDocument 403 /views/404.php
+ErrorDocument 404 /views/404.php
+ErrorDocument 500 /views/500.php
+
